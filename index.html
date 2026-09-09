@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Conference Tutorial</title>
+    <title>Constraint Consistent Image Generation: From Soft Conditioning to Hard Constraints</title>
 
     <style>
         body {
@@ -57,14 +57,14 @@
 <body>
 
 <header>
-    <h1>My Conference Tutorial</h1>
+    <h1>Constraint Consistent Image Generation: From Soft Conditioning to Hard Constraints</h1>
 
     <p class="subtitle">
-        Tutorial at CONFERENCE NAME 2026
+        Tutorial at ACCV 2026, Japan
     </p>
 
     <p>
-        DATE · LOCATION
+        December 14, 2026· Room 1008, Osaka International Convention Center
     </p>
 </header>
 
@@ -73,9 +73,12 @@
     <h2>About the Tutorial</h2>
 
     <p>
-        This tutorial provides an introduction to ...
-        Here you can describe the motivation and goals
-        of the tutorial.
+        Recent advances in artificial intelligence have made it possible to generate highly realistic images directly from text descriptions. Modern text-to-image models, such as Nano Banana, can produce detailed images from prompts like "a red cube on a table." However, despite their impressive visual quality, these models do not reliably satisfy precise logical or structural constraints. This limitation restricts their applicability in domains such as healthcare, education, and scientific visualization, where generated images must consistently satisfy user-specified hard constraints.
+
+        This tutorial introduces participants to the emerging field of Constraint-Consistent Image Generation (CCIG), which aims to develop generative models that produce images guaranteed to satisfy specified constraints. We present the different components involved in CCIG, covering: (i) formal representation of structured visual requirements, using First Order Logic (FOL), Answer Set Programming (ASP) and scene graphs; (ii) an overview of modern conditional image generation models focusing on approaches in which conditioning signals are represented as either text or images, and examining the extent to which their conditioning mechanisms enforce adherence to these input constraints; we will explore these methodologies across a  major industrial frontier - advanced virtual try-on systems  (iii) the challenges of systematically evaluating constraint satisfaction of generative models; and (iv) recent advances in Neuro-Symbolic AI, highlighting its potential for enabling image generation under hard constraints, as well as the open challenges that remain.
+        
+        Drawing on recent developments in controlled image synthesis, knowledge representation and reasoning, and Neuro-Symbolic AI, the tutorial provides both the conceptual foundations and practical tools needed to understand and tackle the problem of constraint-consistent image generation. It is intended for researchers and practitioners in computer vision, generative AI, and AI more broadly who seek to move beyond perceptual quality metrics toward verification based evaluation of generative systems with an emphasis on reasoning about objects, relations, structure, and logical constraints.
+        
     </p>
 </section>
 
@@ -84,56 +87,164 @@
     <h2>Instructors</h2>
 
     <div class="info">
-        <strong>First Instructor</strong><br>
-        University / Institution<br>
-        Email: example@example.com
+
+        <strong>Marjan Alirezaie</strong><br>
+        Flybits Labs / Toronto Metropolitan University (TMU), Canada<br>
+        Email: marjan.alirezaie@flybits.com
     </div>
 
     <br>
 
     <div class="info">
-        <strong>Second Instructor</strong><br>
-        University / Institution<br>
-        Email: example@example.com
+        <strong>Savitha Sam Abraham</strong><br>
+        City St. George's University of London, U.K<br>
+        Email: savitha.sam-abraham@city.ac.uk
+    </div>
+
+    <br>
+
+    <div class="info">
+        <strong>Geethu Miriam Jacob</strong><br>
+        Glance, India<br>
+        Email: geethumiriam@gmail.com
     </div>
 </section>
 
 
 <section>
     <h2>Program</h2>
-
-    <ul>
-        <li>09:00–09:30 — Introduction</li>
-        <li>09:30–10:30 — Part I</li>
-        <li>10:30–11:00 — Coffee Break</li>
-        <li>11:00–12:00 — Part II</li>
-        <li>12:00–13:00 — Hands-on Session</li>
-    </ul>
+    <p>
+        <em>Indicative half-day tutorial schedule.</em>
+    </p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Topic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>15 minutes</td>
+                <td>
+                    <strong>CCIG Problem Specification and Motivation</strong>
+                </td>
+            </tr>
+    
+            <tr>
+                <td>60 minutes</td>
+                <td>
+                    <strong>Foundations I: Constraint Representation and Reasoning</strong>
+                    <ul>
+                        <li>Constraint representation using text and images.</li>
+                        <li>
+                            Constraint representation with logic: introduction to
+                            First-Order Logic (FOL), Answer Set Programming (ASP),
+                            and the complexity of constraints, including relational,
+                            counting, universal, existential, and conditional constraints.
+                        </li>
+                        <li>Constraint representation with scene graphs.</li>
+                        <li>Introduction to the CLEVR dataset.</li>
+                        <li>
+                            <strong>Hands-on:</strong>
+                            (1) Represent constraints for the CLEVR domain in ASP;
+                            (2) Given a CLEVR image, generate a scene graph using a
+                            combination of Grounded Segment Anything Model (GSAM)
+                            with attribute detection networks such as ResNet-34,
+                            or vision-language models such as Qwen2.5-VL.
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+    
+            <tr class="break">
+                <td>10 minutes</td>
+                <td><strong>Break</strong></td>
+            </tr>
+    
+            <tr>
+                <td>45 minutes</td>
+                <td>
+                    <strong>Foundations II: Introduction to Text to Image Generation Models</strong>
+                    <ul>
+                        <li>Diffusion models and transformer-based models - basics.</li>
+                        <li>
+                            <strong>Hands-on:</strong>
+                            Demonstrate how T2I models liek Flux, QwenImage are fine-tuned to
+                            generate CLEVR-style images with constraints.
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+    
+            <tr class="break">
+                <td>10 minutes</td>
+                <td><strong>Break</strong></td>
+            </tr>
+    
+            <tr>
+                <td>30 minutes</td>
+                <td>
+                    <strong>Foundations II (Contd.): Existing Conditional Image Generation Models</strong>
+                    <ul>
+                        <li>
+                            Existing conditional image generation models, including
+                            recent approaches in neuro-symbolic and constraint-aware
+                            image generation.
+                        </li>
+                        <li>
+                            Applications in shopping with GenAI: advanced virtual try-on systems
+                        </li>
+                        <li>
+                            Evaluation metrics for image generative models, with a
+                            focus on evaluating constraint satisfaction beyond
+                            conventional perceptual quality metrics.
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+    
+            <tr class="break">
+                <td>5 minutes</td>
+                <td><strong>Break</strong></td>
+            </tr>
+    
+            <tr>
+                <td>30 minutes</td>
+                <td>
+                    <strong>Future Directions: Neuro-Symbolic Approaches to CCIG</strong>
+                    <ul>
+                        <li>
+                            Neuro-symbolic approaches to Constraint-Consistent
+                            Image Generation (CCIG): key components and challenges.
+                        </li>
+                        <li>Open research problems and promising future directions.</li>
+                        <li>
+                            Interesting applications of CCIG in healthcare and
+                            pedagogy.
+                        </li>
+                        <li>Conclusion and discussion.</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
 </section>
 
 
 <section>
-    <h2>Target Audience</h2>
+    <h2>Target Audience and Prerequisites</h2>
 
     <p>
-        This tutorial is intended for researchers, students,
-        and practitioners interested in ...
+        The tutorial is designed to be suitable to a wide variety of attendees at ACCV 2026. It targets researchers and practitioners in vision-language models and generative AI who are interested in exploring visual reasoning and Neuro-Symbolic AI, and the integration of these two paradigms. The tutorial aims to provide participants with an understanding of the maturity of the field and emerging research directions. It is suitable for an intermediate audience with no prior experience in formal logic or symbolic reasoning.
     </p>
 </section>
 
 
 <section>
-    <h2>Prerequisites</h2>
-
-    <p>
-        No specific prerequisites are required. Basic familiarity
-        with ... is recommended.
-    </p>
-</section>
-
-
-<section>
-    <h2>Materials</h2>
+    <h2>Materials (will be updated soon)</h2>
 
     <ul>
         <li>Slides</li>
@@ -149,13 +260,190 @@
 
     <p>
         For questions about the tutorial, please contact:
-        example@example.com
+        savitha.sam-abraham@city.ac.uk
     </p>
 </section>
 
+<section> <h2>References</h2>
+    <ol class="references">
+        <li>
+            Abraham, S. S., Alirezaie, M., &amp; De Raedt, L. (2024).
+            Clevr-poc: Reasoning-intensive visual question answering in partially
+            observable environments. In <em>Proceedings of the 2024 Joint International
+            Conference on Computational Linguistics, Language Resources and Evaluation
+            (LREC-COLING 2024)</em>, 3297–3313.
+        </li>
+    
+        <li>
+            Abraham, S. S., Garg, S., &amp; Dayoub, F. (2025).
+            To ask or not to ask? Detecting absence of information in vision and
+            language navigation. In <em>2025 IEEE/CVF Winter Conference on Applications
+            of Computer Vision (WACV)</em>, 7480–7489. IEEE.
+        </li>
+    
+        <li>
+            Albinhassan, M., Madhyastha, P., &amp; Russo, A. (2026).
+            Sem-ctrl: Semantically controlled decoding.
+            <em>Transactions on Machine Learning Research</em>.
+        </li>
+    
+        <li>
+            Avrahami, O., Hayes, T., Gafni, O., Gupta, S., Taigman, Y., Parikh, D.,
+            Lischinski, D., Fried, O., &amp; Yin, X. (2023).
+            SpaText: Spatio-textual representation for controllable image generation.
+            In <em>Proceedings of the IEEE/CVF Conference on Computer Vision and
+            Pattern Recognition</em>, 18370–18380.
+        </li>
+    
+        <li>
+            Chen, H., Li, J., Zhuang, W., Vikalo, H., &amp; Lyu, L. (2026).
+            Training-free layout-to-image generation with marginal attention constraints.
+            In <em>Proceedings of the IEEE/CVF Conference on Computer Vision and
+            Pattern Recognition</em>, 3410–3419.
+        </li>
+    
+        <li>
+            Christopher, J. K., Cardei, M., Liang, J., &amp; Fioretto, F. (2025).
+            Neuro-symbolic generative diffusion models for physically grounded,
+            robust, and safe generation. In <em>2nd International Conference on
+            Neuro-symbolic Systems (NeuS)</em>.
+        </li>
+    
+        <li>
+            Dahlgren Lindström, A., &amp; Sam Abraham, S. (2022).
+            Clevr-math: A dataset for compositional language, visual and mathematical
+            reasoning. In <em>International Joint Conference on Learning and Reasoning,
+            16th International Workshop on Neural-Symbolic Learning and Reasoning
+            (NeSy 2022)</em>, vol. 3212, 155–170. Technical University of Aachen.
+        </li>
+    
+        <li>
+            Esser, P., Rombach, R., &amp; Ommer, B. (2021).
+            Taming transformers for high-resolution image synthesis.
+            In <em>Proceedings of the IEEE/CVF Conference on Computer Vision and
+            Pattern Recognition</em>, 12873–12883.
+        </li>
+    
+        <li>
+            He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016).
+            Deep residual learning for image recognition.
+            In <em>Proceedings of the IEEE Conference on Computer Vision and
+            Pattern Recognition</em>, 770–778.
+        </li>
+    
+        <li>
+            Hitzler, P., &amp; Sarker, M. K. (2022).
+            <em>Neuro-symbolic artificial intelligence: The state of the art</em>.
+        </li>
+    
+        <li>
+            Huang, Y., Huang, J., Liu, Y., Yan, M., Lv, J., Liu, J., Xiong, W.,
+            Zhang, H., Cao, L., &amp; Chen, S. (2025).
+            Diffusion model-based image editing: A survey.
+            <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>.
+        </li>
 
+        <li>
+            Johnson, J., Gupta, A., &amp; Fei-Fei, L. (2018).
+            Image generation from scene graphs.
+            <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>,
+            1219–1228.
+        </li>
+        
+        <li>
+            Johnson, J., Hariharan, B., Van Der Maaten, L., Fei-Fei, L.,
+            Lawrence Zitnick, C., &amp; Girshick, R. (2017).
+            CLEVR: A diagnostic dataset for compositional language and elementary visual reasoning.
+            <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>,
+            2901–2910.
+        </li>
+        
+        <li>
+            Lifschitz, V. (2019).
+            <em>Answer Set Programming</em> (Vol. 3).
+            Springer, Cham.
+        </li>
+        
+        <li>
+            Naeem, M. F., Oh, S. J., Uh, Y., Choi, Y., &amp; Yoo, J. (2020).
+            Reliable fidelity and diversity metrics for generative models.
+            <em>Proceedings of the International Conference on Machine Learning</em>,
+            7176–7185. PMLR.
+        </li>
+        
+        <li>
+            Savazzi, G., Lomurno, E., Sbrolli, C., Chiatti, A., &amp; Matteucci, M. (2025).
+            Neuro-symbolic scene graph conditioning for synthetic image dataset generation.
+            <em>International Artificial Intelligence Symposium</em>,
+            409–424. Springer.
+        </li>
+        
+        <li>
+            Shomer-Chai, S., Peng, W., Hariharan, B., &amp; Averbuch-Elor, H. (2026).
+            Color bind: Exploring color perception in text-to-image models.
+            <em>Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision</em>,
+            1916–1925.
+        </li>
+        
+        <li>
+            Sundaram, S. S., Deepak, P., &amp; Abraham, S. S. (2020).
+            Distributed representations for arithmetic word problems.
+            <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>,
+            34, 9000–9007.
+        </li>
+        
+        <li>
+            Qwen Team. (2025).
+            Qwen2.5-VL technical report.
+            <em>arXiv preprint arXiv:2502.13923</em>.
+        </li>
+        
+        <li>
+            Temsah, M. H., Alhuzaimi, A. N., Almansour, M., Aljamaan, F.,
+            Alhasan, K., Batarfi, M. A., Altamimi, I., Alharbi, A.,
+            Alsuhaibani, A. A., Alwakeel, L., et al. (2024).
+            Art or artifact: Evaluating the accuracy, appeal, and educational value
+            of AI-generated imagery in DALL·E 3 for illustrating congenital heart diseases.
+            <em>Journal of Medical Systems</em>, 48(1), 54.
+        </li>
+        
+        <li>
+            Tuo, Y., Geng, Y., &amp; Bo, L. (2024).
+            AnyText2: Visual text generation and editing with customizable attributes.
+            <em>arXiv preprint arXiv:2411.15245</em>.
+        </li>
+        
+        <li>
+            Xu, L., Du, Z., Mao, R., Zhang, F., &amp; Liu, R. (2020).
+            GSAM: A deep neural network model for extracting computational representations
+            of Chinese addresses fused with geospatial feature.
+            <em>Computers, Environment and Urban Systems</em>, 81, 101473.
+        </li>
+        
+        <li>
+            Yang, X., Ding, C., Hong, Z., Huang, J., Tao, J., &amp; Xu, X. (2024).
+            Texture-preserving diffusion models for high-fidelity virtual try-on.
+            <em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</em>,
+            7017–7026.
+        </li>
+        
+        <li>
+            Yi, K., Wu, J., Gan, C., Torralba, A., Kohli, P., &amp; Tenenbaum, J. (2018).
+            Neural-symbolic VQA: Disentangling reasoning from vision and language understanding.
+            <em>Advances in Neural Information Processing Systems</em>, 31.
+        </li>
+        
+        <li>
+            Zhang, S., Qian, H., Ni, M., Li, Y., Ding, W., &amp; Liu, J. (2025).
+            Diffusion model-based size variable virtual try-on technology and evaluation method.
+            <em>Computers &amp; Graphics</em>, 104448.
+        </li>
+        
+    </ol>
+</section>
+           
 <footer>
-    Conference Tutorial · 2026
+    ACCV 2026
 </footer>
 
 </body>
